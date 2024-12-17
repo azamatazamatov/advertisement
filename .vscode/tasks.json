@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "activate_conda_and_pdm",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "source ~/miniconda3/bin/activate advertisement && pdm run uvicorn main:app --reload"
+            ]
+        }
+    ]
+}
