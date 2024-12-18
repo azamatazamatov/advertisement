@@ -3,17 +3,13 @@ name = "advertisement"
 version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "", email = ""},
+    {name = "Azamat", email = "azamat_azamatov@epam.com"},
 ]
-dependencies = ["fastapi>=0.115.6", "uvicorn>=0.32.1", "pymongo>=4.10.1", "sqlalchemy>=2.0.36", "python-jose[cryptography]>=3.3.0", "passlib>=1.7.4", "python-multipart>=0.0.19", "bcrypt==3.2.2", "pyjwt>=2.10.1"]
-requires-python = ">=3.11"
+dependencies = ["uvicorn", "fastapi", "pymongo"]
+requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
-
 
 [tool.pdm]
-distribution = true
+distribution = false
