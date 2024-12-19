@@ -5,25 +5,10 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:2c01da538c97ea3017d8ee1e47462ed4d6f68e1b983a70d14d0c80de080b965f"
+content_hash = "sha256:892556372cc522b4855634b76e3fd2092c7dced7307338be2ab358efc9c2f5c3"
 
 [[metadata.targets]]
 requires_python = "==3.11.*"
-
-[[package]]
-name = "annotated-types"
-version = "0.7.0"
-requires_python = ">=3.8"
-summary = "Reusable constraint types to use with typing.Annotated"
-groups = ["default"]
-marker = "python_version == \"3.11\""
-dependencies = [
-    "typing-extensions>=4.0.0; python_version < \"3.9\"",
-]
-files = [
-    {file = "annotated_types-0.7.0-py3-none-any.whl", hash = "sha256:1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"},
-    {file = "annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"},
-]
 
 [[package]]
 name = "anyio"
@@ -84,6 +69,18 @@ files = [
 ]
 
 [[package]]
+name = "exceptiongroup"
+version = "1.2.2"
+requires_python = ">=3.7"
+summary = "Backport of PEP 654 (exception groups)"
+groups = ["default"]
+marker = "python_version == \"3.11\""
+files = [
+    {file = "exceptiongroup-1.2.2-py3-none-any.whl", hash = "sha256:3111b9d131c238bec2f8f516e123e14ba243563fb135d3fe885990585aa7795b"},
+    {file = "exceptiongroup-1.2.2.tar.gz", hash = "sha256:47c2edf7c6738fafb49fd34290706d1a1a2f4d1c6df275526b62cbb4aa5393cc"},
+]
+
+[[package]]
 name = "fastapi"
 version = "0.115.6"
 requires_python = ">=3.8"
@@ -129,47 +126,24 @@ files = [
 
 [[package]]
 name = "pydantic"
-version = "2.10.3"
-requires_python = ">=3.8"
-summary = "Data validation using Python type hints"
+version = "1.10.19"
+requires_python = ">=3.7"
+summary = "Data validation and settings management using python type hints"
 groups = ["default"]
 marker = "python_version == \"3.11\""
 dependencies = [
-    "annotated-types>=0.6.0",
-    "pydantic-core==2.27.1",
-    "typing-extensions>=4.12.2",
+    "typing-extensions>=4.2.0",
 ]
 files = [
-    {file = "pydantic-2.10.3-py3-none-any.whl", hash = "sha256:be04d85bbc7b65651c5f8e6b9976ed9c6f41782a55524cef079a34a0bb82144d"},
-    {file = "pydantic-2.10.3.tar.gz", hash = "sha256:cb5ac360ce894ceacd69c403187900a02c4b20b693a9dd1d643e1effab9eadf9"},
-]
-
-[[package]]
-name = "pydantic-core"
-version = "2.27.1"
-requires_python = ">=3.8"
-summary = "Core functionality for Pydantic validation and serialization"
-groups = ["default"]
-marker = "python_version == \"3.11\""
-dependencies = [
-    "typing-extensions!=4.7.0,>=4.6.0",
-]
-files = [
-    {file = "pydantic_core-2.27.1-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:ac3b20653bdbe160febbea8aa6c079d3df19310d50ac314911ed8cc4eb7f8cb8"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:a5a8e19d7c707c4cadb8c18f5f60c843052ae83c20fa7d44f41594c644a1d330"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7f7059ca8d64fea7f238994c97d91f75965216bcbe5f695bb44f354893f11d52"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:bed0f8a0eeea9fb72937ba118f9db0cb7e90773462af7962d382445f3005e5a4"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:a3cb37038123447cf0f3ea4c74751f6a9d7afef0eb71aa07bf5f652b5e6a132c"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:84286494f6c5d05243456e04223d5a9417d7f443c3b76065e75001beb26f88de"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:acc07b2cfc5b835444b44a9956846b578d27beeacd4b52e45489e93276241025"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:4fefee876e07a6e9aad7a8c8c9f85b0cdbe7df52b8a9552307b09050f7512c7e"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-musllinux_1_1_aarch64.whl", hash = "sha256:258c57abf1188926c774a4c94dd29237e77eda19462e5bb901d88adcab6af919"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-musllinux_1_1_armv7l.whl", hash = "sha256:35c14ac45fcfdf7167ca76cc80b2001205a8d5d16d80524e13508371fb8cdd9c"},
-    {file = "pydantic_core-2.27.1-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:d1b26e1dff225c31897696cab7d4f0a315d4c0d9e8666dbffdb28216f3b17fdc"},
-    {file = "pydantic_core-2.27.1-cp311-none-win32.whl", hash = "sha256:2cdf7d86886bc6982354862204ae3b2f7f96f21a3eb0ba5ca0ac42c7b38598b9"},
-    {file = "pydantic_core-2.27.1-cp311-none-win_amd64.whl", hash = "sha256:3af385b0cee8df3746c3f406f38bcbfdc9041b5c2d5ce3e5fc6637256e60bbc5"},
-    {file = "pydantic_core-2.27.1-cp311-none-win_arm64.whl", hash = "sha256:81f2ec23ddc1b476ff96563f2e8d723830b06dceae348ce02914a37cb4e74b89"},
-    {file = "pydantic_core-2.27.1.tar.gz", hash = "sha256:62a763352879b84aa31058fc931884055fd75089cccbd9d58bb6afd01141b235"},
+    {file = "pydantic-1.10.19-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:d7a8a1dd68bac29f08f0a3147de1885f4dccec35d4ea926e6e637fac03cdb4b3"},
+    {file = "pydantic-1.10.19-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:07d00ca5ef0de65dd274005433ce2bb623730271d495a7d190a91c19c5679d34"},
+    {file = "pydantic-1.10.19-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ad57004e5d73aee36f1e25e4e73a4bc853b473a1c30f652dc8d86b0a987ffce3"},
+    {file = "pydantic-1.10.19-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:dce355fe7ae53e3090f7f5fa242423c3a7b53260747aa398b4b3aaf8b25f41c3"},
+    {file = "pydantic-1.10.19-cp311-cp311-musllinux_1_1_i686.whl", hash = "sha256:0d32227ea9a3bf537a2273fd2fdb6d64ab4d9b83acd9e4e09310a777baaabb98"},
+    {file = "pydantic-1.10.19-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:e351df83d1c9cffa53d4e779009a093be70f1d5c6bb7068584086f6a19042526"},
+    {file = "pydantic-1.10.19-cp311-cp311-win_amd64.whl", hash = "sha256:d8d72553d2f3f57ce547de4fa7dc8e3859927784ab2c88343f1fc1360ff17a08"},
+    {file = "pydantic-1.10.19-py3-none-any.whl", hash = "sha256:2206a1752d9fac011e95ca83926a269fb0ef5536f7e053966d058316e24d929f"},
+    {file = "pydantic-1.10.19.tar.gz", hash = "sha256:fea36c2065b7a1d28c6819cc2e93387b43dd5d3cf5a1e82d8132ee23f36d1f10"},
 ]
 
 [[package]]

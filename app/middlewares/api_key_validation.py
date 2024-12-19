@@ -1,15 +1,12 @@
-import jwt
-from datetime import datetime, timedelta
-from fastapi import FastAPI, Request, HTTPException
+
+from fastapi import Request, HTTPException
 from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.responses import JSONResponse
-from typing import Callable
-from routers.user import SECRET_KEY, ALGORITHM
+
 
 class APIKeyMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         api_key = request.headers.get('X-API-Key')
         if api_key is None:
-            print("API key required")
+            raise HTTPException(status_code=401, detail='Unauthorized')
         response = await call_next(request)
         return response

@@ -1,21 +1,25 @@
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
-            "name": "FastAPI Debug (Conda + PDM)",
+            "name": "Python Debugger: FastAPI",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "main:app",  // Replace 'main' with your actual entry point file
-                "--reload"
+                "app.main:app",
+                "--reload",
+                "--port",
+                "8000"
             ],
-            "console": "integratedTerminal",
-            "justMyCode": true,
+            "cwd": "${workspaceFolder}",
             "env": {
-                "PYTHONPATH": "${workspaceFolder}"
-            },
-            "preLaunchTask": "activate_conda_and_pdm"
+                "PYTHONPATH": "${workspaceFolder}/__pypackages__/3.11/lib",
+            }
         }
     ]
 }
