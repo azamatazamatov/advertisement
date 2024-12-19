@@ -19,7 +19,8 @@
             "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}/__pypackages__/3.11/lib",
-            }
+            },
+            "envFile": "${workspaceFolder}/.env",
         }
     ]
 }
