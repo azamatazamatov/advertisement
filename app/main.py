@@ -3,4 +3,4 @@ from app.middlewares import APIKeyMiddleware
 
 app = FastAPI()
 
-# app.add_middleware(APIKeyMiddleware)
+app.add_middleware(APIKeyMiddleware)
