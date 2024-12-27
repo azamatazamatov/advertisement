@@ -1,0 +1,1 @@
+from app.crud.advertisements import get_datas, get_data, create_data, update_data, delete_data
