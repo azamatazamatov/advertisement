@@ -1,7 +1,8 @@
 from fastapi import FastAPI
-from app.middlewares import APIKeyMiddleware
-from app.routers import advertisements_router, users_router
-from app.database import create_database, close_database
+from app.v1.middlewares.api_key_validation import APIKeyMiddleware
+from app.v1.routers.advertisements import router as advertisements_router
+from app.v1.routers.users import router as users_router
+from app.v1.database import create_database, close_database
 
 app = FastAPI()
 

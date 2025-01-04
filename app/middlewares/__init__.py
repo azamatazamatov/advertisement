@@ -1,1 +1,0 @@
-from app.middlewares.api_key_validation import APIKeyMiddleware

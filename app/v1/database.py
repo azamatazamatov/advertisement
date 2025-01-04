@@ -1,12 +1,11 @@
 from pymongo import MongoClient
-from pymongo.database import Database
-from fastapi import FastAPI, Request
+from fastapi import Request
 
 MONGO_URL = "mongodb://root:example@localhost:27017"
 
 async def create_database(app):
     app.state.mongodb_client = MongoClient(MONGO_URL)
-    app.state.database = app.state.mongodb_client["mydatabase"]
+    app.state.database = app.state.mongodb_client["advertisement"]
 
 async def close_database(app):
     app.state.mongodb_client.close()
