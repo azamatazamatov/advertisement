@@ -1,5 +1,5 @@
 from pydantic import Field
-from app.v1.models.base.users import User
+from app.models.v1.base.users import User
 from datetime import datetime
 from bson.objectid import ObjectId
 
