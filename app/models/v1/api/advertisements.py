@@ -14,4 +14,4 @@ class CreateAdvertisement(BaseModel):
     owner_id: str = Field(...)
 
 class AdvertisementAPI(Advertisement):
-    pass
+    id: str
