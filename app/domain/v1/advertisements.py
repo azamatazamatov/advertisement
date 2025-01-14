@@ -4,6 +4,8 @@ from app.models.v1.api.advertisements import UpdateAdvertisement, CreateAdvertis
 from pymongo.database import Database
 from fastapi.responses import JSONResponse
 from typing import List
+from fastapi import HTTPException
+from app.exceptions.v1.error_handlers import CustomException
 
 
 class Advertisement:
@@ -19,17 +21,20 @@ class Advertisement:
             adv = self.db.get(adv_id)
             return AdvertisementAPI(**adv.model_dump())
         except:
-            return JSONResponse(status_code=404, content='Not found')
+            raise CustomException(status_code=404, detail="Not found")
 
-    def create_advertisement(self, adv_request: CreateAdvertisement) -> str | JSONResponse:
+    def create_advertisement(self, adv_request: CreateAdvertisement) -> AdvertisementAPI | JSONResponse:
         try:
-            return self.db.create(adv_request)
+            adv = self.db.create(adv_request)
+            response = self.db.get(adv)
+            return AdvertisementAPI(**response.model_dump())
         except:
-            return JSONResponse(status_code=400, content='Not created')
+            raise CustomException(status_code=400, detail="Not created")
 
     def update_advertisement(self, adv_id: str, adv_request: UpdateAdvertisement) -> JSONResponse:
         adv = self.db.update(adv_id, adv_request)
-        return adv
+        response = self.db.get(adv)
+        return AdvertisementAPI(**response.model_dump())
 
     def delete_advertisement(self, adv_id: str) -> JSONResponse:
         return self.db.delete(adv_id)
